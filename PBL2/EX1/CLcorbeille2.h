@@ -1,5 +1,4 @@
-#ifndef CLCORBEILLE2_H
-#define CLCORBEILLE2_H
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -22,5 +21,3 @@ public:
 	// Fonction pour lire un message à partir d'un fichier
 	string lire(string);
 };
-
-#endif
