@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void C3::m3(void)
+void C3::afficher(void)
 {
 	cout << "C3" << endl;
 }

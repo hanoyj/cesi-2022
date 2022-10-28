@@ -3,6 +3,6 @@
 class C3
 {
 public:
-	void m3(void);
+	void afficher(void);
 };
 
