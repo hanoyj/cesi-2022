@@ -153,6 +153,9 @@
     <ClInclude Include="Gpcs1.h" />
     <ClInclude Include="Gpcs2.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="EX2.vpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

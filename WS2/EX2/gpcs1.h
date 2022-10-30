@@ -8,6 +8,7 @@
 class Gpcs1
 {
 private:
+	// 3 attributs privés pour les composants C1, C2 et C3
 	C1 o1;
 	C2 o2;
 	C3 o3;

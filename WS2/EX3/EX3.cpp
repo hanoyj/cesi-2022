@@ -11,19 +11,21 @@ int main()
     Promo CPIA2;
     int choix;
     do {
-        cout << "tapez 1 pour inserer les infos des eleves, 2 de les charger a partir du fichier, 0 pour quitter" << endl;
+        cout << "Tapez 1 pour inserer les infos des eleves, 2 de les charger a partir du fichier, 0 pour quitter" << endl;
         cin >> choix;
-        if (choix == 0)
-            exit;
-        if (choix == 1)
-        {
-            CPIA2.InputNotesUtilisateur();
-            CPIA2.InputNotesAUFichier("CPIA2.txt");
+        
+        switch (choix) {
+        case 0:
+            exit(0);
+        case 1:
+            CPIA2.inputNotesUtilisateur();
+            CPIA2.inputNotesAUFichier("CPIA2.txt");
+            break;
+        case 2:
+            CPIA2.outputNotesDUFichier("CPIA2.txt");
+            break;
         }
-        if (choix == 2)
-        {
-            CPIA2.OutputNotesDUFichier("CPIA2.txt");
-        }
+
         CPIA2.afficherEtudiants();
     } while (choix != 0);
 

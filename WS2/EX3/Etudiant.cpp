@@ -1,5 +1,6 @@
 #include "Etudiant.h"
 
+
 Etudiant::Etudiant() 
 {
 	this->moyenne = 0;

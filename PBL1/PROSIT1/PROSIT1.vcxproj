@@ -145,6 +145,9 @@
   <ItemGroup>
     <ClInclude Include="CLPoint.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="prosit1.vpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

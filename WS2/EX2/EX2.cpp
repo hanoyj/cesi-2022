@@ -15,11 +15,8 @@ int main()
 	Gpcs1 p1;
 	Gpcs2 p2;
 
-	cout << "Service gpcs1s1" << endl;
 	p1.gpcs1S1();
-	cout << "\nService gpcs1s2" << endl;
 	p1.gpcs1S2();
-	cout << "\nService gpcs2s1" << endl;
 	p2.gpcs2S1();
 	cin >> pause;
 
