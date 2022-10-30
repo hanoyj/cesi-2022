@@ -153,6 +153,9 @@
     <ClInclude Include="CLFichier.h" />
     <ClInclude Include="CLGestionCrypt.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="prosit2.vpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
