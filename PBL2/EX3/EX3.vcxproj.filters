@@ -18,12 +18,12 @@
     <ClCompile Include="EX3.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="CLcorbeille2.cpp">
+    <ClCompile Include="Cesar.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CLcorbeille2.h">
+    <ClInclude Include="Cesar.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

@@ -8,8 +8,11 @@ namespace NS_Services
 	{
 	private:
 		NS_Composants::CLfacture* facture;
+
 	public:
 		ServiceFichier();
-		void imprimerFacture(double, double, double);
+		~ServiceFichier();
+
+		void imprimerFacture(double montantHT, double montantTVA, double montantTTC);
 	};
 }

@@ -11,8 +11,11 @@ namespace NS_Services
 		NS_Composants::CLaddition* addition;
 		NS_Composants::CLtva* tva;
 		double grilleCouts[3];
+
 	public:
 		ServiceCalcul();
-		double* calculerMontantTTC(double*, int);
+		~ServiceCalcul();
+
+		double* calculerMontantTTC(double* montantsHT, int taille);
 	};
 }

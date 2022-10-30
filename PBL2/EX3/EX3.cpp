@@ -1,12 +1,11 @@
 // EX3.cpp : Ce fichier contient la fonction 'main'. L'exécution du programme commence et se termine à cet endroit.
 //
 
-#include "CLcorbeille2.h"
+#include "Cesar.h"
 
 int main()
 {
-    CLcorbeille2* cesar;
-    cesar = new CLcorbeille2();
+    Cesar* cesar = new Cesar();
     cout << cesar->getCR('a') << endl;
     cout << cesar->getCR('b') << endl;
     cout << cesar->getCR('c') << endl;
@@ -18,6 +17,5 @@ int main()
     cout << cesar->getCL('e') << endl;
 
     system("PAUSE");
-
     return 0;
 }

@@ -7,17 +7,18 @@
 using namespace std;
 
 /*
-* Definition de la classe CLcorbeille2
+* Definition de la classe ClSvcFichier
 */
-class CLcorbeille2
+class ClSvcFichier
 {
 private:
 	string message;
-	ifstream f_in;
-	ofstream f_out;
+	ifstream fIn;
+	ofstream fOut;
+
 public:
 	// Fonction pour ecrire un message dans un fichier
-	void ecrire(string, string);
+	void ecrire(const string& text, const string& path);
 	// Fonction pour lire un message à partir d'un fichier
-	string lire(string);
+	string lire(const string& path);
 };

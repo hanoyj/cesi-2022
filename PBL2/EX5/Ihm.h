@@ -9,6 +9,8 @@ namespace NS_Clients
 	{
 	public:
 		Ihm();
+		~Ihm();
+
 		void run();
 
 	private:

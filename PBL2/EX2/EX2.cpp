@@ -1,25 +1,20 @@
 // EX2.cpp : Ce fichier contient la fonction 'main'. L'exécution du programme commence et se termine à cet endroit.
 //
 
-#include "CLcorbeille2.h"
+#include "ClSvcFichier.h"
 
 int main()
 {
-    CLcorbeille2* fichier;
-    string path;
-    string message;
-    int buffLenght;
+    string path("myfile2.txt");
+    string message("bonjour");
+    int buffLength = message.length();
 
-    fichier = new CLcorbeille2();
+    ClSvcFichier* fichier = new ClSvcFichier();
 
-    path = "myfile2.txt";
-    message = "bonjour";
-    buffLenght = message.length();
-
-    fichier->ecrireBIN(message, path, buffLenght);
+    fichier->ecrireBIN(message, path, buffLength);
     system("PAUSE");
 
-    message = fichier->lireBIN(path, buffLenght);
+    message = fichier->lireBIN(path, buffLength);
     cout << message << endl;
 
     delete fichier;

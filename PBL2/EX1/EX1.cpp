@@ -1,19 +1,15 @@
 // EX1.cpp : Ce fichier contient la fonction 'main'. L'exécution du programme commence et se termine à cet endroit.
 //
 
-#include "CLcorbeille2.h"
+#include "ClSvcFichier.h"
 #include <iostream>
 
 int main()
 {
-    CLcorbeille2* fichier;
-    string path;
-    string message;
+    string path("myfile.txt");
+    string message("bonjour");
 
-    fichier = new CLcorbeille2();
-    path = "myfile.txt";
-    message = "bonjour";
-
+    ClSvcFichier* fichier = new ClSvcFichier();
     fichier->ecrire(message, path);
 
     message = fichier->lire(path);
