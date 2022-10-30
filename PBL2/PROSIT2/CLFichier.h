@@ -10,14 +10,14 @@ namespace CryptoComponents
 	class CLFichier
 	{
 	public:
-		// Fonction permettant de lire un fichier texte
+		// Méthode permettant de lire un fichier texte
 		string read(const string& path);
-		// Fonction permettant d'ecrire dans un fichier texte
+		// Méthode permettant d'ecrire dans un fichier texte
 		void write(const string& text, const string& path);
 
-		// Fonction permettant de lire un fichier binaire
+		// Méthode permettant de lire un fichier binaire
 		string readBIN(const string& path);
-		// Fonction permettant d'ecrire dans un fichier binaire
+		// Méthode permettant d'ecrire dans un fichier binaire
 		void writeBIN(const string& text, const string& path);
 	};
 }

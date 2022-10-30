@@ -6,7 +6,7 @@ namespace CryptoClients
 	class CLExec
 	{
 	public:
-		// Fonction principale de traitement
+		// Méthode principale de traitement
 		static void run();
 		// Affichage d'un entete
 		static void enTete();
