@@ -12,16 +12,16 @@ namespace CryptoComponents
 	private:
 		// L'alphabet clair
 		char alphabetClear[27];
-		// L'alphabet crypte
+		// L'alphabet crypté
 		char alphabetCrypt[27];
 	public:
 		// Constructeur permettant d'initialiser les alphabets
 		CLCryptN1();
 
-		// Retourne un message decode
-		string getClear(string);
+		// Retourne un message décodé
+		string getClear(const string& chaineCryptN1);
 
-		// Retourne un message code
-		string getCrypt(string);
+		// Retourne un message codé
+		string getCrypt(const string& chaineClearN1);
 	};
 }

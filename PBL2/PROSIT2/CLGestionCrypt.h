@@ -19,24 +19,25 @@ namespace CryptoServices
 		CryptoComponents::CLCryptN2* crypt2;
 		// Permet d'acceder aux fonctions de gestion de fichier
 		CryptoComponents::CLFichier* fichier;
-		// Message à crypter/decrypter
-		string message;
 
 	public:
 		// Constructeur
 		CLGestionCrypt();
+		// Destructeur
+		~CLGestionCrypt();
+
 		// Fonction permettant de crypter en niveau 1
-		string cryptN1(string, string);
+		string cryptN1(const string& pathSource, const string& pathDestination);
 		// Fonction permettant de crypter en niveau 2
-		string cryptN2(string, string, string);
+		string cryptN2(const string& pathSource, const string& pathDestination, const string& psw);
 		// Fonction permettant de crypter en niveau 3
-		string cryptN3(string, string, string);
+		string cryptN3(const string& pathSource, const string& pathDestination, const string& psw);
 
 		// Fonction permettant de decrypter en niveau 1
-		string deCryptN1(string, string);
+		string deCryptN1(const string& pathSource, const string& pathDestination);
 		// Fonction permettant de decrypter en niveau 2
-		string deCryptN2(string, string, string);
+		string deCryptN2(const string& pathSource, const string& pathDestination, const string& psw);
 		// Fonction permettant de decrypter en niveau 3
-		string deCryptN3(string, string, string);
+		string deCryptN3(const string& pathSource, const string& pathDestination, const string& psw);
 	};
 }

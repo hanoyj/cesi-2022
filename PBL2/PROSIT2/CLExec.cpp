@@ -11,21 +11,18 @@ void CLExec::run()
 	string pathSource;
 	string pathDestination;
 	string message;
-	CryptoServices::CLGestionCrypt* cryptProcess;
+	CryptoServices::CLGestionCrypt* cryptProcess = new CryptoServices::CLGestionCrypt();
 	choix = 0;
-	do {
-		CLExec::enTete();
-		cout << endl;
 
+	CLExec::enTete();
+	do {
 		CLExec::menu();
-		cout << endl;
 
 		cout << "Votre choix :" << endl;
 		cin >> choix;
 
 		if (choix == 1)
 		{
-			cryptProcess = new CryptoServices::CLGestionCrypt();
 			cout << "\nQuel est le fichier source ?" << endl;
 			pathSource = "cryptN1.txt";
 			//cin >> pathSource;
@@ -36,13 +33,10 @@ void CLExec::run()
 
 			message = cryptProcess->cryptN1(pathSource, pathDestination);
 			cout << "\nFin du traitement" << endl;
-			delete cryptProcess;
 		}
 		else if(choix == 2)
 		{
-			//char* psw;
 			string psw;
-			cryptProcess = new CryptoServices::CLGestionCrypt();
 
 			cout << "\nQuel est le fichier source ?" << endl;
 			pathSource = "cryptN2.txt";
@@ -53,18 +47,14 @@ void CLExec::run()
 			//cin >> pathDestination;
 
 			cout << "Quel est le mot de passe ?" << endl;
-			//psw = "psw";
 			cin >> psw;
 
 			message = cryptProcess->cryptN2(pathSource, pathDestination, psw);
 			cout << "\nFin du traitement" << endl;
-			delete cryptProcess;
 		}
 		else if (choix == 3)
 		{
-			//char* psw;
 			string psw;
-			cryptProcess = new CryptoServices::CLGestionCrypt();
 
 			cout << "\nQuel est le fichier source ?" << endl;
 			pathSource = "cryptN3.txt";
@@ -75,17 +65,13 @@ void CLExec::run()
 			//cin >> pathDestination;
 
 			cout << "Quel est le mot de passe ?" << endl;
-			// psw = "psw";
 			cin >> psw;
 
 			message = cryptProcess->cryptN3(pathSource, pathDestination, psw);
 			cout << "\nFin du traitement" << endl;
-			delete cryptProcess;
 		}
 		else if (choix == 4)
 		{
-			cryptProcess = new CryptoServices::CLGestionCrypt();
-
 			cout << "\nQuel est le fichier source ?" << endl;
 			pathSource = "cryptN1-result.txt";
 			//cin >> pathSource;
@@ -96,13 +82,10 @@ void CLExec::run()
 
 			message = cryptProcess->deCryptN1(pathSource, pathDestination);
 			cout << "\nFin du traitement" << endl;
-			delete cryptProcess;
 		}
 		else if (choix == 5)
 		{
-			//char* psw;
 			string psw;
-			cryptProcess = new CryptoServices::CLGestionCrypt();
 
 			cout << "\nQuel est le fichier source ?" << endl;
 			pathSource = "cryptN2-result.txt";
@@ -113,34 +96,28 @@ void CLExec::run()
 			//cin >> pathDestination;
 
 			cout << "Quel est le mot de passe ?" << endl;
-			//psw = "psw";
 			cin >> psw;
 
-			message = cryptProcess->cryptN2(pathSource, pathDestination, psw);
+			message = cryptProcess->deCryptN2(pathSource, pathDestination, psw);
 			cout << "\nFin du traitement" << endl;
-			delete cryptProcess;
 		}
 		else if (choix == 6)
 		{
-			//char* psw;
 			string psw;
-			cryptProcess = new CryptoServices::CLGestionCrypt();
 			
 			cout << "\nQuel est le fichier source ?" << endl;
 			pathSource = "cryptN3-result.txt";
 			//cin >> pathSource;
 
 			cout << "Quel est le fichier de destination ?" << endl;
-			pathDestination = "decryptN3-result.txt";
+			pathDestination = "decryptN3.txt";
 			//cin >> pathDestination;
 
 			cout << "Quel est le mot de passe ?" << endl;
-			//psw = "psw";
 			cin >> psw;
 
 			message = cryptProcess->deCryptN3(pathSource, pathDestination, psw);
 			cout << "\nFin du traitement" << endl;
-			delete cryptProcess;
 		}
 		if (choix != 9) 
 		{ 
@@ -149,6 +126,8 @@ void CLExec::run()
 			system("CLS"); 
 		}
 	} while (choix != 9);
+
+	delete cryptProcess;
 }
 
 void CLExec::enTete()
@@ -158,6 +137,7 @@ void CLExec::enTete()
 	cout << "** CRYPTO PROGRAMME **" << endl;
 	cout << "** **" << endl;
 	cout << "***************** v1.0 *********************" << endl;
+	cout << endl;
 }
 
 void CLExec::menu()
@@ -168,7 +148,6 @@ void CLExec::menu()
 	cout << "(4) Derypter un fichier en niveau 1" << endl;
 	cout << "(5) Derypter un fichier en niveau 2" << endl;
 	cout << "(6) Derypter un fichier en niveau 3" << endl;
-	//cout << "(7) Lire un fichier" << endl;
-	//cout << "(8) Ecrire un fichier" << endl;
 	cout << "(9) Quitter" << endl;
+	cout << endl;
 }

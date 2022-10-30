@@ -5,7 +5,7 @@
 using namespace CryptoComponents;
 using namespace std;
 
-string CLFichier::read(string path) 
+string CLFichier::read(const string& path) 
 {
 	string f;
 	string x;
@@ -18,39 +18,34 @@ string CLFichier::read(string path)
 	return x;
 }
 
-void CLFichier::write(string text, string path)
+void CLFichier::write(const string& text, const string& path)
 {
 	ofstream flux(path);
 	flux << text;
 	flux.close();
 }
 
-void CLFichier::writeBIN(string text, const char* path, int buffL)
+void CLFichier::writeBIN(const string& text, const string& path)
 {
-	FILE* file;
 	const char* t = &text[0];
-	int i;
-	file = fopen(path, "w+b");
-	for (i = 0; i < buffL; i++)
+	int buffL = text.length();
+	ofstream flux(path, ios::binary);
+	for (int i = 0; i < buffL; i++)
 	{
-		fprintf(file, "%c", t[i]);
+		flux << t[i];
 	}
-	fclose(file);
+	flux.close();
 }
 
-string CLFichier::readBIN(const char* path, int buffL)
+string CLFichier::readBIN(const string& path)
 {
-	FILE* file;
-	int i = 0;
-	string s;
-	string c;
-	file = fopen(path, "r+b");
-	fseek(file, i, SEEK_SET);
-	for (i = 0; i < buffL;i++)
+	string f;
+	string x;
+	ifstream flux(path, ios::binary);
+	while (getline(flux, f))
 	{
-		c = (char)fgetc(file);
-		s.append(c);
+		x.append(f);
 	}
-	fclose(file);
-	return s;
+	flux.close();
+	return x;
 }

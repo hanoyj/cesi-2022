@@ -4,17 +4,16 @@ using namespace CryptoComponents;
 
 CLCryptN1::CLCryptN1()
 {
-	int i;
 	char c;
 	c = 'a';
-	for (i = 0; i < 26; i++)
+	for (int i = 0; i < 26; i++)
 	{
 		// On remplit le tableau avec l'alphabet classique
 		this->alphabetClear[i] = c;
 		c++;
 	}
 	c = 'a';
-	for (i = 0; i < 26; i++)
+	for (int i = 0; i < 26; i++)
 	{
 		// On remplit le tableau avec l'alphabet decale
 		c++;
@@ -25,20 +24,17 @@ CLCryptN1::CLCryptN1()
 	this->alphabetCrypt[25] = 'a';
 }
 
-string CLCryptN1::getClear(string chaineCryptN1)
+string CLCryptN1::getClear(const string& chaineCryptN1)
 {
 	string reponse;
 	string s;
-	int i;
-	int ii;
-	int tailleChaineCrypt;
-	int tailleAlphabetCrypt;
-	tailleChaineCrypt = chaineCryptN1.length();
-	tailleAlphabetCrypt = 27;
 
-	for (i = 0; i < tailleChaineCrypt; i++)
+	int tailleChaineCrypt = chaineCryptN1.length();
+	int tailleAlphabetCrypt = 27;
+
+	for (int i = 0; i < tailleChaineCrypt; i++)
 	{
-		for (ii = 0; ii < tailleAlphabetCrypt; ii++)
+		for (int ii = 0; ii < tailleAlphabetCrypt; ii++)
 		{
 			if (chaineCryptN1[i] == this->alphabetCrypt[ii])
 			{
@@ -50,19 +46,16 @@ string CLCryptN1::getClear(string chaineCryptN1)
 	return reponse;
 }
 
-string CLCryptN1::getCrypt(string chaineClearN1)
+string CLCryptN1::getCrypt(const string& chaineClearN1)
 {
 	string reponse;
 	string s;
-	int i;
-	int ii;
-	int tailleChaineClearN1;
-	int tailleAlphabet;
-	tailleChaineClearN1 = chaineClearN1.length();
-	tailleAlphabet = 27;
-	for (i = 0; i < tailleChaineClearN1; i++)
+
+	int tailleChaineClearN1 = chaineClearN1.length();
+	int tailleAlphabet = 27;
+	for (int i = 0; i < tailleChaineClearN1; i++)
 	{
-		for (ii = 0; ii < tailleAlphabet; ii++)
+		for (int ii = 0; ii < tailleAlphabet; ii++)
 		{
 			if (chaineClearN1[i] == this->alphabetClear[ii])
 			{

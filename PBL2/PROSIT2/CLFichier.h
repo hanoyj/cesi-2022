@@ -11,13 +11,13 @@ namespace CryptoComponents
 	{
 	public:
 		// Fonction permettant de lire un fichier texte
-		string read(string);
+		string read(const string& path);
 		// Fonction permettant d'ecrire dans un fichier texte
-		void write(string, string);
+		void write(const string& text, const string& path);
 
 		// Fonction permettant de lire un fichier binaire
-		string readBIN(const char*, int);
+		string readBIN(const string& path);
 		// Fonction permettant d'ecrire dans un fichier binaire
-		void writeBIN(string, const char*, int);
+		void writeBIN(const string& text, const string& path);
 	};
 }

@@ -11,6 +11,6 @@ namespace CryptoComponents
 	{
 	public:
 		// Retourne un message crypter/decrypter en fonction d'un mot de passe
-		string get(string, string);
+		string get(const string& chaine, const string& psw);
 	};
 }
