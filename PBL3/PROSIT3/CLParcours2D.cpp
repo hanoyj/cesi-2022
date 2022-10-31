@@ -3,7 +3,8 @@
 #include <iostream>
 using namespace std;
 
-CLParcours2D::CLParcours2D(int taille): AbstractParcours(taille)
+CLParcours2D::CLParcours2D(int taille):
+    AbstractParcours(taille)
 {
 }
 
@@ -12,7 +13,8 @@ double CLParcours2D::calculDistance()
     int i;
     for (i = 0; i < taille - 1; i++)
     {
-        distance += sqrt(pow(parcours[i+1].getX() - parcours[i].getX(), 2) + pow(parcours[i+1].getY() - parcours[i].getY(), 2));
+        distance += parcours[i + 1]->calculDistance(*parcours[i]);
+        //distance += sqrt(pow(parcours[i + 1]->getX() - parcours[i]->getX(), 2) + pow(parcours[i + 1]->getY() - parcours[i]->getY(), 2));
     }
     return distance;
 }

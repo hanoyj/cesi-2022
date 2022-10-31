@@ -17,7 +17,7 @@ int main()
 	CLPoint* p3;
 
 	//AbstractParcours* parcours;
-	// ou aussi plus élégant si on une interface
+	// ou aussi plus élégant si on utilise une interface
 	IParcours* parcours;
 
 	p1 = new CLPoint(0.0, 0.0);

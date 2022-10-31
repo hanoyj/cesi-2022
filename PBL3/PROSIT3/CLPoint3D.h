@@ -17,10 +17,13 @@ public:
 	// Constructuer par recopie
 	CLPoint3D(const CLPoint& p);
 
-	// Fonction permettan d'afficher le point3D, derivee de la class CLPoint
+	// Méthode permettant d'afficher le point3D, derivee de la class CLPoint
 	void afficher() const;
 
+	// Méthode de calcul de distance entre 2 points
+	double calculDistance(const CLPoint& point) const;
+
 private:
-	// fonction d'initialisation de l'objet
-	void initObj(double);
+	// Méthode d'initialisation de l'objet
+	void initObj(double z);
 };

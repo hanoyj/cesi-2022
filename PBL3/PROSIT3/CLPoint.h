@@ -16,55 +16,47 @@ public:
 	// le mot const permet de dire que le parametre p ne pourra pas être modifié lors de l'appel de ce constructeur
 	CLPoint(const CLPoint& p);
 
-	// Fonction permettant de déplacer le point à gauche
+	// Méthode permettant de déplacer le point à gauche
 	void gauche();
-
-	// Fonction permettant de déplacer le point à droite
+	// Méthode permettant de déplacer le point à droite
 	void droite();
-
-	// Fonction permettant de déplacer le point en haut
+	// Méthode permettant de déplacer le point en haut
 	void haut();
-
-	// Fonction permettant de déplacer le point en bas
+	// Méthode permettant de déplacer le point en bas
 	void bas();
 
-	// Fonction permettant d'affecter la valeur x
-	void setX(double);
-
-	// Fonction permettant d'affecter la valeur y
-	void setY(double);
-
-	// Fonction permettant de retourner la valeur x
+	// Méthode permettant de retourner la valeur x
 	// le mot const permet de dire que cette fonction peut être appele par un objet déclaré "const CLPoint". 
 	double getX() const;
+	// Méthode permettant d'affecter la valeur x
+	void setX(double);
 
-	// Fonction permettant de retourner la valeur y
+	// Méthode permettant de retourner la valeur y
 	// le mot const permet de dire que cette fonction peut être appele par un objet déclaré "const CLPoint". 
 	double getY() const;
+	// Méthode permettant d'affecter la valeur y
+	void setY(double);
 
-	// Fonction permettant d'affecter la valeur z
+	// Méthode permettant de retourner la valeur z
+	double getZ() const;
+	// Méthode permettant d'affecter la valeur z
 	void setZ(double);
 
-	// Fonction permettant de retourner la valeur z
-	double getZ() const;
-
-	// Fonction permettan d'afficher le point
+	// Méthode permettant d'afficher le point
 	virtual void afficher() const;
 
-	// Par rapport au prosit1, je supprime cette methode parce que nous voulons generaliser le calcul de distance pour un parcours de plusieurs points 
-//	double calculDistance(const CLPoint& point);
+	// Méthode de calcul de distance entre 2 points
+	virtual double calculDistance(const CLPoint& point) const;
 
 protected:
 	// Valeur de la composante x
 	double x;
-
 	// Valeur de la composante y
 	double y;
-
 	// Valeur de la composante en z
 	double z;
 
-	// Fonction d'initialisation de l'objet
+	// Méthode d'initialisation de l'objet
 	void initObj(double x, double y);
 };
 
