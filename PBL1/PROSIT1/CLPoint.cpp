@@ -71,5 +71,5 @@ void CLPoint::afficher()
 
 double CLPoint::calculerDistance(const CLPoint& p2)
 {
-	return sqrt(pow(p2.getX() - this->getX(), 2) + pow(p2.getX() - this->getX(), 2));
+	return sqrt(pow(p2.getX() - this->getX(), 2) + pow(p2.getY() - this->getY(), 2));
 }
