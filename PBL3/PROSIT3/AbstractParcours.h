@@ -28,8 +28,8 @@ public:
 	virtual void message();
 
 protected:
-	// Liste des points realisant le parcours, c'est un tableau de point
-	CLPoint* parcours;
+	// Liste des points réalisant le parcours, c'est un tableau de pointeur de CLPoint
+	CLPoint** parcours;
 
 	// Taille du parcours
 	int taille;

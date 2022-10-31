@@ -23,7 +23,6 @@ void CLPoint::initObj(double x, double y)
 {
 	this->setX(x);
 	this->setY(y);
-	this->setZ(0);
 }
 
 void CLPoint::gauche()
@@ -52,6 +51,11 @@ void CLPoint::bas()
 	}
 }
 
+double CLPoint::getX() const
+{
+	return this->x;
+}
+
 void CLPoint::setX(double x)
 {
 	if (x < 0)
@@ -62,6 +66,11 @@ void CLPoint::setX(double x)
 	{
 		this->x = x;
 	}
+}
+
+double CLPoint::getY() const
+{
+	return this->y;
 }
 
 void CLPoint::setY(double y)
@@ -76,14 +85,10 @@ void CLPoint::setY(double y)
 	}
 }
 
-double CLPoint::getX() const
-{
-	return this->x;
-}
 
-double CLPoint::getY() const
+double CLPoint::getZ() const
 {
-	return this->y;
+	return z;
 }
 
 void CLPoint::setZ(double z)
@@ -98,14 +103,15 @@ void CLPoint::setZ(double z)
 	}
 }
 
-double CLPoint::getZ() const
-{
-	return z;
-}
 
 void CLPoint::afficher() const
 {
 	cout << "Le point " << this << " a pour coordonnees :" << endl;
 	cout << "(X = " << this->getX() << ")" << endl;
 	cout << "(Y = " << this->getY() << ")" << endl;
+}
+
+double CLPoint::calculDistance(const CLPoint& point) const
+{
+	return sqrt(pow(point.getX() - this->getX(), 2) + pow(point.getY() - this->getY(), 2));
 }
