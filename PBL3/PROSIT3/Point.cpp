@@ -1,31 +1,31 @@
-#include "CLPoint.h"
+#include "Point.h"
 
 #include <iostream>
 
 using namespace std;
 
-CLPoint::CLPoint()
+Point::Point()
 {
 	this->initObj(0, 0);
 }
 
-CLPoint::CLPoint(double x, double y)
+Point::Point(double x, double y)
 {
 	this->initObj(x, y);
 }
 
-CLPoint::CLPoint(const CLPoint& p)
+Point::Point(const Point& p)
 {
 	this->initObj(p.getX(), p.getY());
 }
 
-void CLPoint::initObj(double x, double y)
+void Point::initObj(double x, double y)
 {
 	this->setX(x);
 	this->setY(y);
 }
 
-void CLPoint::gauche()
+void Point::gauche()
 {
 	if (this->getX() - 1 >= 0)
 	{
@@ -33,17 +33,17 @@ void CLPoint::gauche()
 	}
 }
 
-void CLPoint::droite()
+void Point::droite()
 {
 	this->setX(1);
 }
 
-void CLPoint::haut()
+void Point::haut()
 {
 		this->setY(this->getY() + 1);
 }
 
-void CLPoint::bas()
+void Point::bas()
 {
 	if (this->getY() - 1 >= 0)
 	{
@@ -51,12 +51,12 @@ void CLPoint::bas()
 	}
 }
 
-double CLPoint::getX() const
+double Point::getX() const
 {
 	return this->x;
 }
 
-void CLPoint::setX(double x)
+void Point::setX(double x)
 {
 	if (x < 0)
 	{
@@ -68,12 +68,12 @@ void CLPoint::setX(double x)
 	}
 }
 
-double CLPoint::getY() const
+double Point::getY() const
 {
 	return this->y;
 }
 
-void CLPoint::setY(double y)
+void Point::setY(double y)
 {
 	if (y < 0)
 	{
@@ -86,12 +86,12 @@ void CLPoint::setY(double y)
 }
 
 
-double CLPoint::getZ() const
+double Point::getZ() const
 {
 	return z;
 }
 
-void CLPoint::setZ(double z)
+void Point::setZ(double z)
 {
 	if (z < 0)
 	{
@@ -104,14 +104,14 @@ void CLPoint::setZ(double z)
 }
 
 
-void CLPoint::afficher() const
+void Point::afficher() const
 {
 	cout << "Le point " << this << " a pour coordonnees :" << endl;
 	cout << "(X = " << this->getX() << ")" << endl;
 	cout << "(Y = " << this->getY() << ")" << endl;
 }
 
-double CLPoint::calculDistance(const CLPoint& point) const
+double Point::calculDistance(const Point& point) const
 {
 	return sqrt(pow(point.getX() - this->getX(), 2) + pow(point.getY() - this->getY(), 2));
 }

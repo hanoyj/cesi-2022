@@ -1,7 +1,7 @@
 #pragma once
 
 #include "IParcours.h"
-#include "CLPoint.h"
+#include "Point.h"
 
 /*
 * Classe abstraite d'un parcours. Elle contient des fonctions virtuelles avec une implementation de base, elle peut etre derviee
@@ -17,7 +17,7 @@ public:
 	AbstractParcours(int taille);
 
 	// Permet d'ajouter un point au parcours
-	virtual void ajouterPoint(CLPoint* p);
+	virtual void ajouterPoint(Point* p);
 
 	// Calcul la distance du parcours
 	// La fonction est virtuelle. toute classe derinvant la classe AbstractParcours peut re-implementer cette fonction
@@ -29,7 +29,7 @@ public:
 
 protected:
 	// Liste des points réalisant le parcours, c'est un tableau de pointeur de CLPoint
-	CLPoint** parcours;
+	Point** parcours;
 
 	// Taille du parcours
 	int taille;

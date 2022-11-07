@@ -1,6 +1,6 @@
 #pragma once
 
-class CLPoint;
+class Point;
 
 /*
 * Classe virtuelle pure, ou interface. Elle contient des fonctions virtuelles pure, cette classe ne peut pas etre instanciée.
@@ -12,7 +12,7 @@ class IParcours
 public:
 	// Permet d'ajouter un point au parcours
 	// La fonction est virtuelle pure. toute classe implementant l'interface IParcours devra obligatoirement implementer cette fonction
-	virtual void ajouterPoint(CLPoint* p) = 0;
+	virtual void ajouterPoint(Point* p) = 0;
 
 	// Calcul la distance du parcours
 	// La fonction est virtuelle pure. toute classe implementant l'interface IParcours devra obligatoirement implementer cette fonction

@@ -128,18 +128,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AbstractParcours.cpp" />
-    <ClCompile Include="CLParcours2D.cpp" />
-    <ClCompile Include="CLParcours3D.cpp" />
-    <ClCompile Include="CLPoint.cpp" />
-    <ClCompile Include="CLPoint3D.cpp" />
+    <ClCompile Include="Parcours2D.cpp" />
+    <ClCompile Include="Parcours3D.cpp" />
+    <ClCompile Include="Point.cpp" />
+    <ClCompile Include="Point3D.cpp" />
     <ClCompile Include="PROSIT3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractParcours.h" />
-    <ClInclude Include="CLParcours2D.h" />
-    <ClInclude Include="CLParcours3D.h" />
-    <ClInclude Include="CLPoint.h" />
-    <ClInclude Include="CLPoint3D.h" />
+    <ClInclude Include="Parcours2D.h" />
+    <ClInclude Include="Parcours3D.h" />
+    <ClInclude Include="Point.h" />
+    <ClInclude Include="Point3D.h" />
     <ClInclude Include="IParcours.h" />
   </ItemGroup>
   <ItemGroup>

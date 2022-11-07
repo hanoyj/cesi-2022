@@ -3,18 +3,18 @@
 /*
 *	Classe CLPoint representant un point
 */
-class CLPoint
+class Point
 {
 public:
 	// Constructeur par defaut
-	CLPoint();
+	Point();
 
 	// Constructeur prenant en parametre la valeur x et la valeur y du point
-	CLPoint(double x, double y);
+	Point(double x, double y);
 
 	// Constructeur par recopie d'un autre point
 	// le mot const permet de dire que le parametre p ne pourra pas être modifié lors de l'appel de ce constructeur
-	CLPoint(const CLPoint& p);
+	Point(const Point& p);
 
 	// Méthode permettant de déplacer le point à gauche
 	void gauche();
@@ -46,7 +46,7 @@ public:
 	virtual void afficher() const;
 
 	// Méthode de calcul de distance entre 2 points
-	virtual double calculDistance(const CLPoint& point) const;
+	virtual double calculDistance(const Point& point) const;
 
 protected:
 	// Valeur de la composante x

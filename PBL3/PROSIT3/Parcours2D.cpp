@@ -1,14 +1,14 @@
-#include "CLParcours2D.h"
+#include "Parcours2D.h"
 
 #include <iostream>
 using namespace std;
 
-CLParcours2D::CLParcours2D(int taille):
+Parcours2D::Parcours2D(int taille):
     AbstractParcours(taille)
 {
 }
 
-double CLParcours2D::calculDistance()
+double Parcours2D::calculDistance()
 {
     int i;
     for (i = 0; i < taille - 1; i++)
@@ -19,7 +19,7 @@ double CLParcours2D::calculDistance()
     return distance;
 }
 
-void CLParcours2D::message()
+void Parcours2D::message()
 {
     cout << "Calcul d'un parcours de type 2D" << endl;
 }

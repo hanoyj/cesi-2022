@@ -1,14 +1,14 @@
-#include "CLParcours3D.h"
+#include "Parcours3D.h"
 
 #include <iostream>
 using namespace std;
 
-CLParcours3D::CLParcours3D(int taille):
+Parcours3D::Parcours3D(int taille):
     AbstractParcours(taille)
 {
 }
 
-double CLParcours3D::calculDistance()
+double Parcours3D::calculDistance()
 {
     int i;
     for (i = 0; i < taille - 1; i++)
@@ -19,7 +19,7 @@ double CLParcours3D::calculDistance()
     return distance;
 }
 
-void CLParcours3D::message()
+void Parcours3D::message()
 {
     cout << "Calcul d'un parcours de type 3D" << endl;
 }
