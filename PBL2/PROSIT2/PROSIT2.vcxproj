@@ -139,19 +139,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CLCryptN1.cpp" />
-    <ClCompile Include="CLCryptN2.cpp" />
-    <ClCompile Include="CLExec.cpp" />
-    <ClCompile Include="CLFichier.cpp" />
-    <ClCompile Include="CLGestionCrypt.cpp" />
+    <ClCompile Include="Cesar.cpp" />
+    <ClCompile Include="Xor.cpp" />
+    <ClCompile Include="Ihm.cpp" />
+    <ClCompile Include="GestionFichier.cpp" />
+    <ClCompile Include="GestionCryptage.cpp" />
     <ClCompile Include="PROSIT2.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CLCryptN1.h" />
-    <ClInclude Include="CLCryptN2.h" />
-    <ClInclude Include="CLExec.h" />
-    <ClInclude Include="CLFichier.h" />
-    <ClInclude Include="CLGestionCrypt.h" />
+    <ClInclude Include="Cesar.h" />
+    <ClInclude Include="Xor.h" />
+    <ClInclude Include="Ihm.h" />
+    <ClInclude Include="GestionFichier.h" />
+    <ClInclude Include="GestionCryptage.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="prosit2.vpp" />

@@ -1,8 +1,8 @@
-#include "CLCryptN1.h"
+#include "Cesar.h"
 
 using namespace CryptoComponents;
 
-CLCryptN1::CLCryptN1()
+Cesar::Cesar()
 {
 	char c;
 	c = 'a';
@@ -24,7 +24,7 @@ CLCryptN1::CLCryptN1()
 	this->alphabetCrypt[25] = 'a';
 }
 
-string CLCryptN1::getClear(const string& chaineCryptN1)
+string Cesar::decrypt(const string& chaineCryptN1)
 {
 	string reponse;
 	string s;
@@ -46,7 +46,7 @@ string CLCryptN1::getClear(const string& chaineCryptN1)
 	return reponse;
 }
 
-string CLCryptN1::getCrypt(const string& chaineClearN1)
+string Cesar::encrypt(const string& chaineClearN1)
 {
 	string reponse;
 	string s;

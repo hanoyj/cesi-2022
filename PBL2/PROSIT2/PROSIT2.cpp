@@ -1,11 +1,11 @@
 // PROSIT2.cpp : Ce fichier contient la fonction 'main'. L'exécution du programme commence et se termine à cet endroit.
 //
 
-#include "CLExec.h"
+#include "Ihm.h"
 #include <iostream>
 
 int main()
 {
-	CryptoClients::CLExec::run();
+	CryptoClients::Ihm::run();
 	return 0;
 }

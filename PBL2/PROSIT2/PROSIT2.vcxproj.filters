@@ -18,36 +18,36 @@
     <ClCompile Include="PROSIT2.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="CLCryptN1.cpp">
+    <ClCompile Include="Cesar.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="CLCryptN2.cpp">
+    <ClCompile Include="Xor.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="CLExec.cpp">
+    <ClCompile Include="Ihm.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="CLFichier.cpp">
+    <ClCompile Include="GestionFichier.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="CLGestionCrypt.cpp">
+    <ClCompile Include="GestionCryptage.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CLCryptN1.h">
+    <ClInclude Include="Cesar.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="CLCryptN2.h">
+    <ClInclude Include="Xor.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="CLExec.h">
+    <ClInclude Include="Ihm.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="CLFichier.h">
+    <ClInclude Include="GestionFichier.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="CLGestionCrypt.h">
+    <ClInclude Include="GestionCryptage.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

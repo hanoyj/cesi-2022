@@ -7,10 +7,10 @@ using namespace std;
 namespace CryptoComponents
 {
 	// Classe permettant de crypter un message en utilisant xOR
-	class CLCryptN2
+	class Xor
 	{
 	public:
 		// Retourne un message crypter/decrypter en fonction d'un mot de passe
-		string get(const string& chaine, const string& psw);
+		string encryptDecrypt(const string& chaine, const string& psw);
 	};
 }

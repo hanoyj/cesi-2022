@@ -7,7 +7,7 @@ using namespace std;
 namespace CryptoComponents
 {
 	// Classe de gestion de lecture/ecriture de fichier
-	class CLFichier
+	class GestionFichier
 	{
 	public:
 		// Méthode permettant de lire un fichier texte

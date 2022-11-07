@@ -1,8 +1,8 @@
-#include "CLCryptN2.h"
+#include "Xor.h"
 
 using namespace CryptoComponents;
 
-string CLCryptN2::get(const string& chaine, const string& psw)
+string Xor::encryptDecrypt(const string& chaine, const string& psw)
 {
 	string s;
 	char cX;

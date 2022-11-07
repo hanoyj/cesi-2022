@@ -1,11 +1,11 @@
-#include "CLFichier.h"
+#include "GestionFichier.h"
 #include <iostream>
 #include <fstream>
 
 using namespace CryptoComponents;
 using namespace std;
 
-string CLFichier::read(const string& path) 
+string GestionFichier::read(const string& path) 
 {
 	string f;
 	string x;
@@ -18,14 +18,14 @@ string CLFichier::read(const string& path)
 	return x;
 }
 
-void CLFichier::write(const string& text, const string& path)
+void GestionFichier::write(const string& text, const string& path)
 {
 	ofstream flux(path);
 	flux << text;
 	flux.close();
 }
 
-void CLFichier::writeBIN(const string& text, const string& path)
+void GestionFichier::writeBIN(const string& text, const string& path)
 {
 	const char* t = &text[0];
 	int buffL = text.length();
@@ -37,7 +37,7 @@ void CLFichier::writeBIN(const string& text, const string& path)
 	flux.close();
 }
 
-string CLFichier::readBIN(const string& path)
+string GestionFichier::readBIN(const string& path)
 {
 	string f;
 	string x;
