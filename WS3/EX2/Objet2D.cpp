@@ -17,7 +17,3 @@ int Objet2D::getPerimetre() {
 int Objet2D::getAire() {
 	return 0;
 }
-
-string Objet2D::afficheInfo() {
-	return "Objet2D";
-}

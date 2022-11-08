@@ -16,6 +16,7 @@ public:
 
 	virtual int getPerimetre();
 	virtual int getAire();
-	virtual string afficheInfo();
+	// Méthode virtuelle pure => la classe est abstraite
+	virtual string afficheInfo() = 0;
 };
 
