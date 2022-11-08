@@ -36,4 +36,5 @@ int main()
     a->print();
     // Fonction non virtuelle, liée à la compilation
     a->display();
+
 }
