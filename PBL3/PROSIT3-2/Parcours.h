@@ -3,11 +3,7 @@
 #include <vector>
 
 /*
-* Classe abstraite d'un parcours. Elle contient des fonctions virtuelles avec une implementation de base, elle peut etre derviee
-* 
-* Définition : une classe abstraite est une classe dont l'implémentation n'est pas complète et qui n'est pas instanciable. Elle sert de base à d'autres classes dérivées. 
-* 
-* Ici, je la nomme Abstract mais ce n'est pas totalement vrai, puisque la classe peut être instanciée (aucune methode virtuelle pure restante)
+* Classe template d'un parcours.
 */
 template <class P>
 class Parcours
