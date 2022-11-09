@@ -17,26 +17,26 @@ public:
 	AbstractParcours(int taille);
 
 	// Permet d'ajouter un point au parcours
-	virtual void ajouterPoint(Point* p);
+	void ajouterPoint(Point* p);
 
 	// Calcul la distance du parcours
-	// La fonction est virtuelle. toute classe derinvant la classe AbstractParcours peut re-implementer cette fonction
-	virtual double calculDistance();
+	double calculDistance();
 
 	// Affiche un message specifique au parcours
 	// La fonction est virtuelle. toute classe derinvant la classe AbstractParcours peut re-implementer cette fonction
 	virtual void message();
 
 protected:
-	// Liste des points réalisant le parcours, c'est un tableau de pointeur de CLPoint
+	// Liste des points réalisant le parcours, c'est un tableau de pointeur de Point
 	Point** parcours;
-
 	// Taille du parcours
 	int taille;
-
 	// Index courant
 	int index;
-
 	// Distance du parcours
 	double distance;
+
+	// Calcul la distance entre 2 points à un index donné
+	// La fonction est virtuelle. toute classe derinvant la classe AbstractParcours peut re-implementer cette fonction
+	virtual double calculDistanceEntrePoints(int index) = 0;
 };

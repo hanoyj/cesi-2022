@@ -12,10 +12,10 @@ public:
 	// Constructeur de parcours prenant en parametre la taille du parcours
 	Parcours3D(int taille);
 
-	// Calcul la distance du parcours 3D (cf fonction virtuelle de la classe AbstractParcours)
-	double calculDistance();
-
 	// Affiche un message specifique au parcours 3D (cf fonction virtuelle de la classe AbstractParcours)
 	void message();
+
+protected:
+	virtual double calculDistanceEntrePoints(int index);
 };
 

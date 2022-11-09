@@ -18,7 +18,12 @@ void AbstractParcours::ajouterPoint(Point* p)
 
 double AbstractParcours::calculDistance()
 {
-	return 0;
+	int i;
+	for (i = 0; i < taille - 1; i++)
+	{
+		distance += this->calculDistanceEntrePoints(i);
+	}
+	return distance;
 }
 
 void AbstractParcours::message()
