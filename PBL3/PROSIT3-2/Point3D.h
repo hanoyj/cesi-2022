@@ -16,14 +16,24 @@ public:
 
 	// Constructuer par recopie
 	Point3D(const Point& p);
+	// Constructuer par recopie
+	Point3D(const Point3D& p);
+
+	// Méthode permettant de retourner la valeur z
+	double getZ() const;
+	// Méthode permettant d'affecter la valeur z
+	void setZ(double);
 
 	// Méthode permettant d'afficher le point3D, derivee de la class CLPoint
 	void afficher() const;
 
 	// Méthode de calcul de distance entre 2 points
-	double distance(const Point& point) const;
+	double distance(const Point3D& point) const;
 
 private:
+	// Valeur de la composante en z
+	double z;
+
 	// Méthode d'initialisation de l'objet
 	void initObj(double z);
 };

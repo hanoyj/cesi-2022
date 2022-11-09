@@ -25,32 +25,6 @@ void Point::initObj(double x, double y)
 	this->setY(y);
 }
 
-void Point::gauche()
-{
-	if (this->getX() - 1 >= 0)
-	{
-		this->setX(-1);
-	}
-}
-
-void Point::droite()
-{
-	this->setX(1);
-}
-
-void Point::haut()
-{
-		this->setY(this->getY() + 1);
-}
-
-void Point::bas()
-{
-	if (this->getY() - 1 >= 0)
-	{
-		this->setY(this->getY() - 1);
-	}
-}
-
 double Point::getX() const
 {
 	return this->x;
@@ -82,24 +56,6 @@ void Point::setY(double y)
 	else
 	{
 		this->y = y;
-	}
-}
-
-
-double Point::getZ() const
-{
-	return z;
-}
-
-void Point::setZ(double z)
-{
-	if (z < 0)
-	{
-		this->z = 0;
-	}
-	else
-	{
-		this->z = z;
 	}
 }
 
