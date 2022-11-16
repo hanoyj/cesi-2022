@@ -9,6 +9,7 @@ namespace NS_composants
 			return file;
 		}
 		catch (ArgumentException^) {
+			// Si le dossier n'est pas sélectionné (bouton Annuler) ou pas correct
 			return gcnew array<String^>(0);
 		}
 	}
