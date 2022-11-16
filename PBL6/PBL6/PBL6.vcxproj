@@ -134,6 +134,13 @@
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="create-db.sql" />
+    <None Include="prosit6.vpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="prosit6.jpg" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
