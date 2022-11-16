@@ -67,14 +67,14 @@ namespace PBL6 {
 	private: int id;
 	private: System::Windows::Forms::Label^ lbl_adresse;
 	private: System::Windows::Forms::DataGridView^ dgv_adresses;
-	private: System::Windows::Forms::TabControl^ tabControl1;
-	private: System::Windows::Forms::TabPage^ tabPage1;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::TabPage^ tabPage2;
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::GroupBox^ groupBox1;
-	private: System::Windows::Forms::Button^ button1;
+
+
+
+
+
+
+
+
 
 
 
@@ -112,18 +112,7 @@ namespace PBL6 {
 			this->btn_enregistrer = (gcnew System::Windows::Forms::Button());
 			this->lbl_adresse = (gcnew System::Windows::Forms::Label());
 			this->dgv_adresses = (gcnew System::Windows::Forms::DataGridView());
-			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
-			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
-			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_adresses))->BeginInit();
-			this->tabControl1->SuspendLayout();
-			this->tabPage1->SuspendLayout();
-			this->tabPage2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// lbl_id
@@ -287,93 +276,14 @@ namespace PBL6 {
 			this->dgv_adresses->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dgv_adresses->Location = System::Drawing::Point(361, 27);
 			this->dgv_adresses->Name = L"dgv_adresses";
-			this->dgv_adresses->Size = System::Drawing::Size(581, 332);
+			this->dgv_adresses->Size = System::Drawing::Size(744, 332);
 			this->dgv_adresses->TabIndex = 10;
-			// 
-			// tabControl1
-			// 
-			this->tabControl1->Controls->Add(this->tabPage1);
-			this->tabControl1->Controls->Add(this->tabPage2);
-			this->tabControl1->Location = System::Drawing::Point(16, 465);
-			this->tabControl1->Name = L"tabControl1";
-			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(1023, 145);
-			this->tabControl1->TabIndex = 17;
-			// 
-			// tabPage1
-			// 
-			this->tabPage1->Controls->Add(this->label2);
-			this->tabPage1->Controls->Add(this->textBox1);
-			this->tabPage1->Location = System::Drawing::Point(4, 22);
-			this->tabPage1->Name = L"tabPage1";
-			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage1->Size = System::Drawing::Size(1015, 119);
-			this->tabPage1->TabIndex = 0;
-			this->tabPage1->Text = L"tabPage1";
-			this->tabPage1->UseVisualStyleBackColor = true;
-			// 
-			// tabPage2
-			// 
-			this->tabPage2->Controls->Add(this->button1);
-			this->tabPage2->Controls->Add(this->label1);
-			this->tabPage2->Controls->Add(this->groupBox1);
-			this->tabPage2->Location = System::Drawing::Point(4, 22);
-			this->tabPage2->Name = L"tabPage2";
-			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage2->Size = System::Drawing::Size(1015, 119);
-			this->tabPage2->TabIndex = 1;
-			this->tabPage2->Text = L"tabPage2";
-			this->tabPage2->UseVisualStyleBackColor = true;
-			// 
-			// textBox1
-			// 
-			this->textBox1->Location = System::Drawing::Point(27, 35);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(100, 20);
-			this->textBox1->TabIndex = 0;
-			// 
-			// groupBox1
-			// 
-			this->groupBox1->Location = System::Drawing::Point(39, 29);
-			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(200, 100);
-			this->groupBox1->TabIndex = 0;
-			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"groupBox1";
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(347, 59);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(35, 13);
-			this->label1->TabIndex = 1;
-			this->label1->Text = L"label1";
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(214, 35);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(35, 13);
-			this->label2->TabIndex = 1;
-			this->label2->Text = L"label2";
-			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(501, 45);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
-			this->button1->TabIndex = 2;
-			this->button1->Text = L"button1";
-			this->button1->UseVisualStyleBackColor = true;
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1128, 622);
-			this->Controls->Add(this->tabControl1);
+			this->ClientSize = System::Drawing::Size(1128, 457);
 			this->Controls->Add(this->dgv_adresses);
 			this->Controls->Add(this->btn_enregistrer);
 			this->Controls->Add(this->lbl_adresse);
@@ -393,14 +303,9 @@ namespace PBL6 {
 			this->Controls->Add(this->txt_idPersonne);
 			this->Controls->Add(this->lbl_id);
 			this->Name = L"MyForm";
-			this->Text = L"1ere Application de BDD";
+			this->Text = L"Application BDD";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_adresses))->EndInit();
-			this->tabControl1->ResumeLayout(false);
-			this->tabPage1->ResumeLayout(false);
-			this->tabPage1->PerformLayout();
-			this->tabPage2->ResumeLayout(false);
-			this->tabPage2->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -558,10 +463,15 @@ namespace PBL6 {
 			this->dgv_adresses->Columns["id_adresse"]->Visible = true;
 			for (i = 0; i < taille - 1; i++)
 			{
-				lesAdresses[i] = Convert::ToString(this->dgv_adresses[0, ii]->Value); i++;
-				lesAdresses[i] = Convert::ToString(this->dgv_adresses[1, ii]->Value); i++;
-				lesAdresses[i] = Convert::ToString(this->dgv_adresses[2, ii]->Value); i++;
-				lesAdresses[i] = Convert::ToString(this->dgv_adresses[3, ii]->Value);
+				String^ id = Convert::ToString(this->dgv_adresses[0, ii]->Value);
+				String^ adresse = Convert::ToString(this->dgv_adresses[1, ii]->Value);
+				String^ ville = Convert::ToString(this->dgv_adresses[2, ii]->Value);
+				String^ cp = Convert::ToString(this->dgv_adresses[3, ii]->Value);
+
+				lesAdresses[i++] = id;
+				lesAdresses[i++] = adresse;
+				lesAdresses[i++] = ville;
+				lesAdresses[i++] = cp;
 				ii++;
 			}
 			// On modifie le client dans la bdd
@@ -581,5 +491,5 @@ namespace PBL6 {
 		this->txt_message->Text += "Traitement terminé.";
 	}
 
-	};
+};
 }

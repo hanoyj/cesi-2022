@@ -63,11 +63,26 @@ void CL_svc_gestionPersonnes::modifier(int id_personne, String^ nom, String^ pre
     // On met à jour les adresses dans la bddd
     for (i = 0; i < lesAdresses->Length - 1; i++)
     {
-        this->adresse->setIdAdresse(Convert::ToInt32(lesAdresses[i])); i++;
-        this->adresse->setAdresse(lesAdresses[i]); i++;
-        this->adresse->setVille(lesAdresses[i]); i++;
-        this->adresse->setCp(lesAdresses[i]);
-        this->cad->actionRows(this->adresse->UPDATE());
+        String^ id = lesAdresses[i++];
+        String^ adresse = lesAdresses[i++];
+        String^ ville = lesAdresses[i++];
+        String^ cp = lesAdresses[i++];
+
+        this->adresse->setAdresse(adresse); i++;
+        this->adresse->setVille(ville); i++;
+        this->adresse->setCp(cp);
+        if (!String::IsNullOrEmpty(id)) {
+            this->adresse->setIdAdresse(Convert::ToInt32(id));
+            if (String::IsNullOrEmpty(adresse) && String::IsNullOrEmpty(ville) && String::IsNullOrEmpty(cp)) {
+                this->cad->actionRows(this->adresse->DELETE());
+            }
+            else {
+                this->cad->actionRows(this->adresse->UPDATE());
+            }
+        }
+        else {
+            this->cad->actionRows(this->adresse->INSERT());
+        }
     }
 }
 
