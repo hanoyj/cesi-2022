@@ -4,14 +4,14 @@ using namespace System;
 
 // On crée un namespace specifique pour les composants, ça permet de regrouper les classes
 // C'est purement cosmétique mais permet d'avoir un code plus elegant
-namespace NS_Composants
+namespace Composants
 {
     // Cette classe permet de transiter les informations contenues dans la bdd dans une classe de donnée
-    ref class CL_map_TBPERSONNE
+    ref class MappingTBPERSONNE
     {
     public:
         // Constructeur par defaut
-        CL_map_TBPERSONNE();
+        MappingTBPERSONNE();
 
         // retourne le commande pour selectionner une personne dans la bdd
         String^ SELECT();
@@ -34,7 +34,7 @@ namespace NS_Composants
         String^ getPrenom();
 
     private:
-        int id_personne;
+        int idPersonne;
         String^ nom;
         String^ prenom;
     };

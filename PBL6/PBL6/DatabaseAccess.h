@@ -9,40 +9,40 @@ using namespace System;
 
 // On crée un namespace specifique pour les composants, ça permet de regrouper les classes
 // C'est purement cosmétique mais permet d'avoir un code plus elegant
-namespace NS_Composants
+namespace Composants
 {
     // Classe de Composant Acces à la Donnees
-    ref class CL_CAD
+    ref class DatabaseAccess
     {
     public:
         // Constructeur par defaut
-        CL_CAD();
+        DatabaseAccess();
 
         // Utiliser pour ajouter un element à la base en retournant l'id de l'element
-        int actionRowsID(String^);
+        int actionRowsID(String^ request);
 
         // Utiliser pour modifier ou supprimer une element de la base
-        void actionRows(String^);
+        void actionRows(String^ request);
 
         // Utiliser pour recuperer de la donnees de la base
-        DataSet^ getRows(String^, String^);
+        DataSet^ getRows(String^ request, String^ dataTableName);
 
     private:
         // Contient les informations de connexion
-        String^ cnx;
+        String^ connectionInformation;
 
         // Le nom de la requete SQL en cours
-        String^ rq_sql;
+        String^ sqlRequest;
 
         // La connxion SQL
-        SqlConnection^ CNX;
+        SqlConnection^ sqlConnection;
 
         // La commande SQL
-        SqlCommand^ CMD;
-        SqlDataAdapter^ DA;
+        SqlCommand^ sqlCommand;
+        SqlDataAdapter^ sqlAdapter;
 
         // Les donnees renvoyees par les requetes
-        DataSet^ DS;
+        DataSet^ dataSet;
 
         // Affecte la requete SQL
         void setSQL(String^);

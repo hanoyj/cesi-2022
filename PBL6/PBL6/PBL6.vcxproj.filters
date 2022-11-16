@@ -18,16 +18,16 @@
     <ClCompile Include="MyForm.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="CL_map_TBADRESSE.cpp">
+    <ClCompile Include="MappingTBADRESSE.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="CL_CAD.cpp">
+    <ClCompile Include="DatabaseAccess.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="CL_map_TBPERSONNE.cpp">
+    <ClCompile Include="MappingTBPERSONNE.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="CL_svc_gestionPersonnes.cpp">
+    <ClCompile Include="ServiceGestionPersonnes.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,16 +35,16 @@
     <ClInclude Include="MyForm.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="CL_CAD.h">
+    <ClInclude Include="DatabaseAccess.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="CL_map_TBADRESSE.h">
+    <ClInclude Include="MappingTBADRESSE.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="CL_map_TBPERSONNE.h">
+    <ClInclude Include="MappingTBPERSONNE.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="CL_svc_gestionPersonnes.h">
+    <ClInclude Include="ServiceGestionPersonnes.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,75 +1,75 @@
-#include "CL_map_TBPERSONNE.h" 
+#include "MappingTBPERSONNE.h" 
 
-using namespace NS_Composants;
+using namespace Composants;
 
-CL_map_TBPERSONNE::CL_map_TBPERSONNE()
+MappingTBPERSONNE::MappingTBPERSONNE()
 {
-    this->id_personne = -1;
+    this->idPersonne = -1;
     this->nom = "RIEN";
     this->prenom = "RIEN";
 }
 
-String^ CL_map_TBPERSONNE::SELECT()
+String^ MappingTBPERSONNE::SELECT()
 {
     return "SELECT id_personne, nom, prenom " +
         "FROM TB_PERSONNE;";
 }
 
-String^ CL_map_TBPERSONNE::INSERT()
+String^ MappingTBPERSONNE::INSERT()
 {
     return "INSERT INTO TB_PERSONNE " +
         "(nom, prenom) " +
         "VALUES('" + this->getNom() + "', '" + this->getPrenom() + "');SELECT @@IDENTITY;";
 }
 
-String^ CL_map_TBPERSONNE::UPDATE()
+String^ MappingTBPERSONNE::UPDATE()
 {
     return "UPDATE TB_PERSONNE " +
         "SET nom = '" + this->getNom() + "', prenom = '" + this->getPrenom() + "' " +
         "WHERE(id_personne = " + this->getId() + ");";
 }
 
-String^ CL_map_TBPERSONNE::DELETE()
+String^ MappingTBPERSONNE::DELETE()
 {
     return "DELETE FROM TB_PERSONNE " +
         "WHERE(id_personne = " + this->getId() + ");";
 }
 
-void CL_map_TBPERSONNE::setID(int id_personne)
+void MappingTBPERSONNE::setID(int id_personne)
 {
     if (id_personne > 0)
     {
-        this->id_personne = id_personne;
+        this->idPersonne = id_personne;
     }
 }
 
-void CL_map_TBPERSONNE::setPrenom(String^ prenom)
+void MappingTBPERSONNE::setPrenom(String^ prenom)
 {
-    if (prenom != "")
+    if (!String::IsNullOrEmpty(prenom))
     {
         this->prenom = prenom;
     }
 }
 
-void CL_map_TBPERSONNE::setNom(String^ nom)
+void MappingTBPERSONNE::setNom(String^ nom)
 {
-    if (nom != "")
+    if (!String::IsNullOrEmpty(nom))
     {
         this->nom = nom;
     }
 }
 
-int CL_map_TBPERSONNE::getId()
+int MappingTBPERSONNE::getId()
 {
-    return this->id_personne;
+    return this->idPersonne;
 }
 
-String^ CL_map_TBPERSONNE::getNom()
+String^ MappingTBPERSONNE::getNom()
 {
     return this->nom;
 }
 
-String^ CL_map_TBPERSONNE::getPrenom()
+String^ MappingTBPERSONNE::getPrenom()
 {
     return this->prenom;
 }

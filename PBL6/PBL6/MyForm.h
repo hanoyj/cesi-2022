@@ -1,6 +1,6 @@
 #pragma once
 
-#include "CL_svc_gestionPersonnes.h"
+#include "ServiceGestionPersonnes.h"
 
 namespace PBL6 {
 
@@ -54,7 +54,7 @@ namespace PBL6 {
 	private: System::Windows::Forms::Button^ btn_enregistrer;
 
 		   // Le service qui gere les donnees des personnes
-	private: NS_Svc::CL_svc_gestionPersonnes^ gestionClients;
+	private: Services::ServiceGestionPersonnes^ gestionClients;
 		   // Un cache memoire sur la table des personnes
 	private: Data::DataSet^ dsPersonne;
 		   // Un cache memoire sur la table des adresses
@@ -67,18 +67,6 @@ namespace PBL6 {
 	private: int id;
 	private: System::Windows::Forms::Label^ lbl_adresse;
 	private: System::Windows::Forms::DataGridView^ dgv_adresses;
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	private:
@@ -321,7 +309,7 @@ namespace PBL6 {
 		this->dsAdresse = gcnew Data::DataSet();
 
 		// Initialisation du gestionnaire de client
-		this->gestionClients = gcnew NS_Svc::CL_svc_gestionPersonnes();
+		this->gestionClients = gcnew Services::ServiceGestionPersonnes();
 
 		// Mise à jour de l'interface graphique avec les donnees initiales de la bdd
 		this->loadData(this->index);

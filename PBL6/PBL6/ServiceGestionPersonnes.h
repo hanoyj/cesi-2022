@@ -1,18 +1,18 @@
 #pragma once
 
-#include "CL_CAD.h" 
-#include "CL_map_TBPERSONNE.h" 
-#include "CL_map_TBADRESSE.h"
+#include "DatabaseAccess.h" 
+#include "MappingTBPERSONNE.h" 
+#include "MappingTBADRESSE.h"
 
 // On crée un namespace specifique pour la gestion de service, ça permet de regrouper les classes
 // C'est purement cosmétique mais permet d'avoir un code plus elegant
-namespace NS_Svc
+namespace Services
 {
-    ref class CL_svc_gestionPersonnes
+    ref class ServiceGestionPersonnes
     {
     public:
         // constructeur par defaut
-        CL_svc_gestionPersonnes();
+        ServiceGestionPersonnes();
 
         // Permet de recuperer la liste des personnes presentes dans la bdd (identifiant de la liste)
         DataSet^ listeClients(String^);
@@ -31,15 +31,15 @@ namespace NS_Svc
 
     private:
         // Permet d'acceder à la donnee
-        NS_Composants::CL_CAD^ cad;
+        Composants::DatabaseAccess^ databaseAccess;
 
         // Permet de mapper une donnee personne vers/depuis la bdd
-        NS_Composants::CL_map_TBPERSONNE^ personne;
+        Composants::MappingTBPERSONNE^ personne;
 
         // Permet de mapper une donne adresse vers/depuis la bdd
-        NS_Composants::CL_map_TBADRESSE^ adresse;
+        Composants::MappingTBADRESSE^ adresse;
 
         // Cache de donnée en memoire de la bdd
-        DataSet^ ds;
+        DataSet^ dataSet;
     };
 }

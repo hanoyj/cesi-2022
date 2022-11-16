@@ -1,33 +1,31 @@
-#include "CL_svc_gestionPersonnes.h" 
+#include "ServiceGestionPersonnes.h" 
 
-using namespace NS_Svc;
+using namespace Services;
 
-CL_svc_gestionPersonnes::CL_svc_gestionPersonnes()
+ServiceGestionPersonnes::ServiceGestionPersonnes()
 {
-    this->cad = gcnew NS_Composants::CL_CAD();
-    this->personne = gcnew NS_Composants::CL_map_TBPERSONNE();
-    this->adresse = gcnew NS_Composants::CL_map_TBADRESSE();
-    this->ds = gcnew Data::DataSet();
+    this->databaseAccess = gcnew Composants::DatabaseAccess();
+    this->personne = gcnew Composants::MappingTBPERSONNE();
+    this->adresse = gcnew Composants::MappingTBADRESSE();
+    this->dataSet = gcnew Data::DataSet();
 }
 
-DataSet^ CL_svc_gestionPersonnes::listeClients(String^ dataTableName)
+DataSet^ ServiceGestionPersonnes::listeClients(String^ dataTableName)
 {
-    this->ds->Clear();
-    this->ds = this->cad->getRows(this->personne->SELECT(), dataTableName);
-
-    return this->ds;
+    this->dataSet->Clear();
+    this->dataSet = this->databaseAccess->getRows(this->personne->SELECT(), dataTableName);
+    return this->dataSet;
 }
 
-DataSet^ CL_svc_gestionPersonnes::adressesClient(int id_personne, String^ dataTableName)
+DataSet^ ServiceGestionPersonnes::adressesClient(int id_personne, String^ dataTableName)
 {
-    this->ds->Clear();
+    this->dataSet->Clear();
     this->adresse->setIdPersonne(id_personne);
-    this->ds = this->cad->getRows(this->adresse->SELECTByIdPersonne(), dataTableName);
-
-    return this->ds;
+    this->dataSet = this->databaseAccess->getRows(this->adresse->SELECTByIdPersonne(), dataTableName);
+    return this->dataSet;
 }
 
-int CL_svc_gestionPersonnes::ajouter(String^ nom, String^ prenom, array<String^>^ lesAdresses)
+int ServiceGestionPersonnes::ajouter(String^ nom, String^ prenom, array<String^>^ lesAdresses)
 {
     int id_personne;
     int i;
@@ -35,7 +33,7 @@ int CL_svc_gestionPersonnes::ajouter(String^ nom, String^ prenom, array<String^>
     // On ajoute la personne à la bdd
     this->personne->setNom(nom);
     this->personne->setPrenom(prenom);
-    id_personne = this->cad->actionRowsID(this->personne->INSERT());
+    id_personne = this->databaseAccess->actionRowsID(this->personne->INSERT());
 
     // Pour chaque adresse, on l'ajoute à la bdd
     for (i = 0; i < lesAdresses->Length - 1; i++)
@@ -44,13 +42,13 @@ int CL_svc_gestionPersonnes::ajouter(String^ nom, String^ prenom, array<String^>
         this->adresse->setVille(lesAdresses[i]); i++;
         this->adresse->setCp(lesAdresses[i]);
         this->adresse->setIdPersonne(id_personne);
-        this->cad->actionRows(this->adresse->INSERT());
+        this->databaseAccess->actionRows(this->adresse->INSERT());
     }
 
     return id_personne;
 }
 
-void CL_svc_gestionPersonnes::modifier(int id_personne, String^ nom, String^ prenom, array<String^>^ lesAdresses)
+void ServiceGestionPersonnes::modifier(int id_personne, String^ nom, String^ prenom, array<String^>^ lesAdresses)
 {
     int i;
 
@@ -58,7 +56,7 @@ void CL_svc_gestionPersonnes::modifier(int id_personne, String^ nom, String^ pre
     this->personne->setID(id_personne);
     this->personne->setNom(nom);
     this->personne->setPrenom(prenom);
-    this->cad->actionRows(this->personne->UPDATE());
+    this->databaseAccess->actionRows(this->personne->UPDATE());
 
     // On met à jour les adresses dans la bddd
     for (i = 0; i < lesAdresses->Length - 1; i++)
@@ -74,27 +72,27 @@ void CL_svc_gestionPersonnes::modifier(int id_personne, String^ nom, String^ pre
         if (!String::IsNullOrEmpty(id)) {
             this->adresse->setIdAdresse(Convert::ToInt32(id));
             if (String::IsNullOrEmpty(adresse) && String::IsNullOrEmpty(ville) && String::IsNullOrEmpty(cp)) {
-                this->cad->actionRows(this->adresse->DELETE());
+                this->databaseAccess->actionRows(this->adresse->DELETE());
             }
             else {
-                this->cad->actionRows(this->adresse->UPDATE());
+                this->databaseAccess->actionRows(this->adresse->UPDATE());
             }
         }
         else {
-            this->cad->actionRows(this->adresse->INSERT());
+            this->databaseAccess->actionRows(this->adresse->INSERT());
         }
     }
 }
 
-void CL_svc_gestionPersonnes::supprimer(int id_personne)
+void ServiceGestionPersonnes::supprimer(int id_personne)
 {
     this->personne->setID(id_personne);
     // suppression des adresses liées au client
     DataSet^ adresses = this->adressesClient(id_personne, "adresses");
     for (int i = 0; i < adresses->Tables["adresses"]->Rows->Count; ++i) {
         this->adresse->setIdAdresse(Convert::ToInt32(adresses->Tables["adresses"]->Rows[i]->ItemArray[0]));
-        this->cad->actionRows(this->adresse->DELETE());
+        this->databaseAccess->actionRows(this->adresse->DELETE());
     }
     // suppression de la personne de la BDD
-    this->cad->actionRows(this->personne->DELETE());
+    this->databaseAccess->actionRows(this->personne->DELETE());
 }

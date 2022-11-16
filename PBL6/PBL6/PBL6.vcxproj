@@ -121,17 +121,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CL_CAD.cpp" />
-    <ClCompile Include="CL_map_TBADRESSE.cpp" />
-    <ClCompile Include="CL_map_TBPERSONNE.cpp" />
-    <ClCompile Include="CL_svc_gestionPersonnes.cpp" />
+    <ClCompile Include="DatabaseAccess.cpp" />
+    <ClCompile Include="MappingTBADRESSE.cpp" />
+    <ClCompile Include="MappingTBPERSONNE.cpp" />
+    <ClCompile Include="ServiceGestionPersonnes.cpp" />
     <ClCompile Include="MyForm.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CL_CAD.h" />
-    <ClInclude Include="CL_map_TBADRESSE.h" />
-    <ClInclude Include="CL_map_TBPERSONNE.h" />
-    <ClInclude Include="CL_svc_gestionPersonnes.h" />
+    <ClInclude Include="DatabaseAccess.h" />
+    <ClInclude Include="MappingTBADRESSE.h" />
+    <ClInclude Include="MappingTBPERSONNE.h" />
+    <ClInclude Include="ServiceGestionPersonnes.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>

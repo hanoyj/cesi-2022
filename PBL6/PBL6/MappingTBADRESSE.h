@@ -4,14 +4,14 @@ using namespace System;
 
 // On crée un namespace specifique pour les composants, ça permet de regrouper les classes
 // C'est purement cosmétique mais permet d'avoir un code plus elegant
-namespace NS_Composants
+namespace Composants
 {
     // Cette classe permet de transiter les informations contenues dans la bdd dans une classe de donnée
-    ref class CL_map_TBADRESSE
+    ref class MappingTBADRESSE
     {
     public:
         // Constructeur par defaut
-        CL_map_TBADRESSE();
+        MappingTBADRESSE();
 
         // retourne le commande pour selectionner une adresse dans la bdd
         String^ SELECTByIdPersonne();
@@ -26,7 +26,7 @@ namespace NS_Composants
         String^ DELETE();
 
         // Accesseurs et setters classique de donnees
-        void setIdAdresse(int);
+        void setIdAdresse(int idAdresse);
         void setAdresse(String^);
         void setCp(String^);
         void setVille(String^);
@@ -38,10 +38,10 @@ namespace NS_Composants
         int getIdPersonne();
 
     private:
-        int id_adresse;
+        int idAdresse;
         String^ adresse;
         String^ cp;
         String^ ville;
-        int id_personne;
+        int idPersonne;
     };
 }
