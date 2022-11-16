@@ -15,19 +15,19 @@ namespace Services
         ServiceGestionPersonnes();
 
         // Permet de recuperer la liste des personnes presentes dans la bdd (identifiant de la liste)
-        DataSet^ listeClients(String^);
+        DataSet^ listeClients(String^ dataTableName);
 
         // Permet de recuperer la liste des adresses en fonction de la personne (identifiant de la liste)
-        DataSet^ adressesClient(int, String^);
+        DataSet^ adressesClient(int idPersonne, String^ dataTableName);
 
         // Permet d'ajouter une personne (nom, prenom, adresses)
-        int ajouter(String^, String^, array<String^>^);
+        int ajouter(String^ nom, String^ prenom, array<String^>^ adresses);
 
         // Permet de modifier une personne (indentifiant de la personne à modifier, nouveau nom, nouveau prenom, nouvelles adresses)
-        void modifier(int, String^, String^, array<String^>^);
+        void modifier(int idPersonne, String^ nom, String^ prenom, array<String^>^ adresses);
 
         // Permet de supprimer une personne (identifiant de la personne à supprimer)
-        void supprimer(int);
+        void supprimer(int idPersonne);
 
     private:
         // Permet d'acceder à la donnee

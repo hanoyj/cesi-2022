@@ -55,6 +55,6 @@ void DatabaseAccess::setSQL(String^ request)
     }
     else
     {
-        this->sqlRequest = rq_sql;
+        this->sqlRequest = request;
     }
 }

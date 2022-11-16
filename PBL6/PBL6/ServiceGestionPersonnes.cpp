@@ -17,15 +17,15 @@ DataSet^ ServiceGestionPersonnes::listeClients(String^ dataTableName)
     return this->dataSet;
 }
 
-DataSet^ ServiceGestionPersonnes::adressesClient(int id_personne, String^ dataTableName)
+DataSet^ ServiceGestionPersonnes::adressesClient(int iPersonne, String^ dataTableName)
 {
     this->dataSet->Clear();
-    this->adresse->setIdPersonne(id_personne);
+    this->adresse->setIdPersonne(iPersonne);
     this->dataSet = this->databaseAccess->getRows(this->adresse->SELECTByIdPersonne(), dataTableName);
     return this->dataSet;
 }
 
-int ServiceGestionPersonnes::ajouter(String^ nom, String^ prenom, array<String^>^ lesAdresses)
+int ServiceGestionPersonnes::ajouter(String^ nom, String^ prenom, array<String^>^ adresses)
 {
     int id_personne;
     int i;
@@ -36,11 +36,11 @@ int ServiceGestionPersonnes::ajouter(String^ nom, String^ prenom, array<String^>
     id_personne = this->databaseAccess->actionRowsID(this->personne->INSERT());
 
     // Pour chaque adresse, on l'ajoute à la bdd
-    for (i = 0; i < lesAdresses->Length - 1; i++)
+    for (i = 0; i < adresses->Length - 1; i++)
     {
-        this->adresse->setAdresse(lesAdresses[i]); i++;
-        this->adresse->setVille(lesAdresses[i]); i++;
-        this->adresse->setCp(lesAdresses[i]);
+        this->adresse->setAdresse(adresses[i]); i++;
+        this->adresse->setVille(adresses[i]); i++;
+        this->adresse->setCp(adresses[i]);
         this->adresse->setIdPersonne(id_personne);
         this->databaseAccess->actionRows(this->adresse->INSERT());
     }
@@ -48,23 +48,23 @@ int ServiceGestionPersonnes::ajouter(String^ nom, String^ prenom, array<String^>
     return id_personne;
 }
 
-void ServiceGestionPersonnes::modifier(int id_personne, String^ nom, String^ prenom, array<String^>^ lesAdresses)
+void ServiceGestionPersonnes::modifier(int idPersonne, String^ nom, String^ prenom, array<String^>^ adresses)
 {
     int i;
 
     // On met à jour la bdd
-    this->personne->setID(id_personne);
+    this->personne->setID(idPersonne);
     this->personne->setNom(nom);
     this->personne->setPrenom(prenom);
     this->databaseAccess->actionRows(this->personne->UPDATE());
 
     // On met à jour les adresses dans la bddd
-    for (i = 0; i < lesAdresses->Length - 1; i++)
+    for (i = 0; i < adresses->Length - 1; i++)
     {
-        String^ id = lesAdresses[i++];
-        String^ adresse = lesAdresses[i++];
-        String^ ville = lesAdresses[i++];
-        String^ cp = lesAdresses[i++];
+        String^ id = adresses[i++];
+        String^ adresse = adresses[i++];
+        String^ ville = adresses[i++];
+        String^ cp = adresses[i++];
 
         this->adresse->setAdresse(adresse); i++;
         this->adresse->setVille(ville); i++;
@@ -84,11 +84,11 @@ void ServiceGestionPersonnes::modifier(int id_personne, String^ nom, String^ pre
     }
 }
 
-void ServiceGestionPersonnes::supprimer(int id_personne)
+void ServiceGestionPersonnes::supprimer(int idPersonne)
 {
-    this->personne->setID(id_personne);
+    this->personne->setID(idPersonne);
     // suppression des adresses liées au client
-    DataSet^ adresses = this->adressesClient(id_personne, "adresses");
+    DataSet^ adresses = this->adressesClient(idPersonne, "adresses");
     for (int i = 0; i < adresses->Tables["adresses"]->Rows->Count; ++i) {
         this->adresse->setIdAdresse(Convert::ToInt32(adresses->Tables["adresses"]->Rows[i]->ItemArray[0]));
         this->databaseAccess->actionRows(this->adresse->DELETE());
