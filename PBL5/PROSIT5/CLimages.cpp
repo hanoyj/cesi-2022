@@ -9,7 +9,7 @@ namespace NS_composants
 		try {
 			return gcnew System::Drawing::Bitmap(fichier);
 		}
-		catch (const System::ArgumentException^ e) {
+		catch (const System::ArgumentException^) {
 			// Si le fichier n'est pas une image
 			return nullptr;
 		}

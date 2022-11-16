@@ -148,7 +148,7 @@ namespace EX2 {
 		try {
 			this->textBox3->Text = Convert::ToString(Convert::ToInt32(this->textBox2->Text) + Convert::ToInt32(this->textBox1->Text));
 		}
-		catch (const System::FormatException^ e) {
+		catch (const System::FormatException^) {
 			this->textBox3->Text = "ERREUR";
 		}
 	}
