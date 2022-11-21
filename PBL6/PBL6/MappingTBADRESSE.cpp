@@ -37,35 +37,35 @@ String^ MappingTBADRESSE::DELETE()
         "WHERE(id_adresse = " + this->idAdresse + ");";
 }
 
-void MappingTBADRESSE::setIdAdresse(int idAdresse)
+void MappingTBADRESSE::setIdAdresse(int id)
 {
-    if (idAdresse > 0) this->idAdresse = idAdresse;
+    if (id > 0) this->idAdresse = id;
 }
 
-void MappingTBADRESSE::setAdresse(String^ Adresse)
+void MappingTBADRESSE::setAdresse(String^ adresse)
 {
-    if (!String::IsNullOrEmpty(Adresse)) {
-        this->adresse = Adresse;
+    if (!String::IsNullOrEmpty(adresse)) {
+        this->adresse = adresse;
     }
 }
 
-void MappingTBADRESSE::setCp(String^ Cp)
+void MappingTBADRESSE::setCp(String^ cp)
 {
-    if (!String::IsNullOrEmpty(Cp)) {
-        this->cp = Cp;
+    if (!String::IsNullOrEmpty(cp)) {
+        this->cp = cp;
     }
 }
 
-void MappingTBADRESSE::setVille(String^ Ville)
+void MappingTBADRESSE::setVille(String^ ville)
 {
-    if (!String::IsNullOrEmpty(Ville)) {
-        this->ville = Ville;
+    if (!String::IsNullOrEmpty(ville)) {
+        this->ville = ville;
     }
 }
 
-void MappingTBADRESSE::setIdPersonne(int IdPersonne)
+void MappingTBADRESSE::setIdPersonne(int id)
 {
-    if (IdPersonne > 0) this->idPersonne = IdPersonne;
+    if (id > 0) this->idPersonne = id;
 }
 
 int MappingTBADRESSE::getIdAdresse()

@@ -26,9 +26,9 @@ namespace Composants
         String^ DELETE();
 
         // Accesseurs et setters classique de donnees
-        void setID(int);
-        void setPrenom(String^);
-        void setNom(String^);
+        void setID(int id);
+        void setPrenom(String^ prenom);
+        void setNom(String^ nom);
         int getId();
         String^ getNom();
         String^ getPrenom();

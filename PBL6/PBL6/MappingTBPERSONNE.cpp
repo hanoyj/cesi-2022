@@ -35,11 +35,11 @@ String^ MappingTBPERSONNE::DELETE()
         "WHERE(id_personne = " + this->getId() + ");";
 }
 
-void MappingTBPERSONNE::setID(int id_personne)
+void MappingTBPERSONNE::setID(int id)
 {
-    if (id_personne > 0)
+    if (id > 0)
     {
-        this->idPersonne = id_personne;
+        this->idPersonne = id;
     }
 }
 

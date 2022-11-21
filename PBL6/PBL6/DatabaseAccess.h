@@ -34,7 +34,7 @@ namespace Composants
         // Le nom de la requete SQL en cours
         String^ sqlRequest;
 
-        // La connxion SQL
+        // La connexion SQL
         SqlConnection^ sqlConnection;
 
         // La commande SQL
@@ -45,6 +45,6 @@ namespace Composants
         DataSet^ dataSet;
 
         // Affecte la requete SQL
-        void setSQL(String^);
+        void setSQL(String^ request);
     };
 }

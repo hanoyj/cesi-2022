@@ -26,11 +26,11 @@ namespace Composants
         String^ DELETE();
 
         // Accesseurs et setters classique de donnees
-        void setIdAdresse(int idAdresse);
-        void setAdresse(String^);
-        void setCp(String^);
-        void setVille(String^);
-        void setIdPersonne(int);
+        void setIdAdresse(int idA);
+        void setAdresse(String^ adresse);
+        void setCp(String^ cp);
+        void setVille(String^ ville);
+        void setIdPersonne(int id);
         int getIdAdresse();
         String^ getAdresse();
         String^ getCp();
