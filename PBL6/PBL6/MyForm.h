@@ -16,6 +16,14 @@ namespace PBL6 {
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
+		enum class EditionMode {
+			NO_MODE,
+
+			CREATE,
+			UPDATE,
+			DELETE
+		};
+
 	public:
 		MyForm(void)
 		{
@@ -68,15 +76,11 @@ namespace PBL6 {
 		   // L'index courant de la personne affichee
 	private: int index;
 		   // Le mode 
-	private: String^ mode;
+	private: EditionMode mode;
 	private: int rowsCount;
 	private: int id;
 
 	private:
-		static String^ CREATION_MODE = "creation";
-		static String^ UPDATE_MODE = "maj";
-		static String^ DELETE_MODE = "suppression";
-
 		/// <summary>
 		/// Variable nécessaire au concepteur.
 		/// </summary>
@@ -311,7 +315,7 @@ namespace PBL6 {
 	{
 		// Initialisation de l'interface graphique
 		this->index = 0;
-		this->mode = "";
+		this->mode = EditionMode::NO_MODE;
 		this->dsPersonne = gcnew Data::DataSet();
 		this->dsAdresse = gcnew Data::DataSet();
 
@@ -398,7 +402,7 @@ namespace PBL6 {
 		this->adressesTable->Columns->Add("Cp", "Cp");
 
 		// Mode actuel de saisie
-		this->mode = CREATION_MODE;
+		this->mode = EditionMode::CREATE;
 
 		// Message utilisateur
 		this->messageTxt->Text = "Veuillez saisir les information de la nouvelle personne et enregistrer";
@@ -407,7 +411,7 @@ namespace PBL6 {
 	private: System::Void onModifyClick(System::Object^ sender, System::EventArgs^ e)
 	{
 		// Mode actuel de saisie
-		this->mode = UPDATE_MODE;
+		this->mode = EditionMode::UPDATE;
 		// Message utilisateur
 		this->messageTxt->Text = "Veuillez modifier les information de la nouvelle courante et enregistrer.";
 	}
@@ -415,15 +419,15 @@ namespace PBL6 {
 	private: System::Void onDeleteClick(System::Object^ sender, System::EventArgs^ e)
 	{
 		// Mode actuel de saisie
-		this->mode = DELETE_MODE;
+		this->mode = EditionMode::DELETE;
 		// Message utilisateur
 		this->messageTxt->Text = "Veuillez confirmer la suppression de la personne en cours en enregistrant.";
 	}
 
 	private: System::Void onSaveClick(System::Object^ sender, System::EventArgs^ e)
 	{
-		// Suivant le mode de saisie
-		if (this->mode == CREATION_MODE)
+		switch (this->mode) {
+		case EditionMode::CREATE:
 		{
 			int i;
 			int ii;
@@ -444,7 +448,9 @@ namespace PBL6 {
 			// On ajoute le client a la bdd
 			this->gestionClients->ajouter(this->nomTxt->Text, this->prenomTxt->Text, lesAdresses);
 		}
-		else if (this->mode == UPDATE_MODE)
+		break;
+
+		case EditionMode::UPDATE:
 		{
 			int i;
 			int ii;
@@ -474,10 +480,14 @@ namespace PBL6 {
 				this->nomTxt->Text, this->prenomTxt->Text, lesAdresses);
 
 		}
-		else if (this->mode == DELETE_MODE)
+		break;
+
+		case EditionMode::DELETE:
 		{
 			// On supprime le client de la bdd
 			this->gestionClients->supprimer(Convert::ToInt32(this->idPersonneTxt->Text));
+		}
+		break;
 		}
 
 		// On met à jour l'interface graphique avec les informations du premier client (s'il existe)
